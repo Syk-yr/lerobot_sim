@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "LeRobot Record - SO101 Follower",
+            "type": "python",
+            "request": "launch",
+            "module": "lerobot.record",
+            "args": [
+                "--robot.type=so101_follower",
+                "--robot.port=/dev/ttyACM0",
+                "--robot.cameras={front: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}, wrist: {type: opencv, index_or_path: 0, width: 640, height: 480, fps: 30}}",
+                "--robot.id=follower",
+                "--display_data=false",
+                "--dataset.repo_id=/home/yk/lerobot/eval_so101-table-cleanup",
+                "--dataset.single_task=Grab pens and place into pen holder."
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"
+            },
+            "justMyCode": false
+        }
+    ]
+} 
